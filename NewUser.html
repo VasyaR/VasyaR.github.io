@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+            margin: 50px auto;
+        }
+        label {
+            
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="password"], select {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="login">Login:</label>
+        <input type="text" id="login" name="login">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <label for="confirm-password"> Confirm password:</label>
+        <input type="password" id="confirm-password" name="confirm-password">
+        <label for="firstname">First name:</label>
+        <input type="text" id="firstname" name="first-name">
+        <label for="lastname">Last name:</label>
+        <input type="text" id="lastname" name="lastname">
+        <label for="university-id"> University id:</label>
+        <input type="text" id="university-id" name="university-id">
+        <label for="teachers">Teacher ids` separated by comas:</label>
+        <input type="text" id="teachers" name="teachers">
+        <label for="role">Role:</label>
+        <select id="role" name="role">
+            <option value="admin">Admin</option>
+            <option value="teacher">Teacher</option>
+            <option value="student">Student</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
