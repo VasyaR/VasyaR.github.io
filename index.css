@@ -42,7 +42,7 @@
     .rick-roll-button {
       font-size: 4rem;
       padding: 1.5rem 2rem; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 1920px) {
     .rick-roll-button {
       font-size: 5rem;
       padding: 2.5rem 3rem; } }
@@ -118,7 +118,7 @@
     .corner-btn {
       font-size: 1.5rem;
       padding: 0.6rem 0.75rem; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 1920px) {
     .corner-btn {
       font-size: 2rem;
       padding: 1.25rem 1.75rem; } }
@@ -134,7 +134,7 @@
     .right-bottom-btn {
       bottom: 45px;
       right: 45px; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 1920px) {
     .right-bottom-btn {
       bottom: 65px;
       right: 65px; } }
@@ -150,7 +150,7 @@
     .left-top-btn {
       top: 65px;
       left: 45px; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 1920px) {
     .left-top-btn {
       top: 65px;
       left: 65px; } }
@@ -166,7 +166,7 @@
     .right-top-btn {
       top: 65px;
       right: 45px; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 1920px) {
     .right-top-btn {
       top: 65px;
       right: 65px; } }
@@ -182,7 +182,7 @@
     .left-bottom-btn {
       bottom: 45px;
       left: 45px; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 1920px) {
     .left-bottom-btn {
       bottom: 65px;
       left: 65px; } }
@@ -202,10 +202,11 @@
 
 .left-ads-div {
   display: none; }
-  @media (min-width: 992px) {
+  @media (min-width: 1920px) {
     .left-ads-div {
       display: flex;
       position: absolute;
+      top: 7.5%;
       left: 0;
       width: 20%;
       height: 100%;
@@ -213,35 +214,38 @@
 
 .right-ads-div {
   display: none; }
-  @media (min-width: 992px) {
+  @media (min-width: 1920px) {
     .right-ads-div {
       display: flex;
       position: absolute;
+      top: 7.5%;
       right: 0;
       width: 20%;
       height: 100%;
       text-align: center; } }
 
 .right-bottom-ads-div {
+  display: flex;
   position: absolute;
   left: 100;
-  bottom: 0;
+  /*bottom: 0;*/
   right: 0;
   width: 50%;
   height: 25%;
   text-align: center; }
-  @media (min-width: 992px) {
+  @media (min-width: 1920px) {
     .right-bottom-ads-div {
       display: none; } }
 
 .left-bottom-ads-div {
+  display: flex;
   position: absolute;
-  bottom: 0;
+  /*bottom: 0;*/
   left: 0;
   width: 50%;
   height: 25%;
   text-align: center; }
-  @media (min-width: 992px) {
+  @media (min-width: 1920px) {
     .left-bottom-ads-div {
       display: none; } }
 

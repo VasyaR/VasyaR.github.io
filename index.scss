@@ -1,7 +1,7 @@
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
+$breakpoint-xl: 1920px;
 
 @mixin media-sm {
   @media (min-width: $breakpoint-sm) {
@@ -261,9 +261,10 @@ $breakpoint-xl: 1200px;
 
 .left-ads-div
 {
-	@include media-lg {
+	@include media-xl {
 			display: flex;
 		     	position: absolute;
+		     	top: 7.5%;
 			left: 0;
 			width:20%;  
 			height:100%;  
@@ -274,9 +275,10 @@ $breakpoint-xl: 1200px;
 
 .right-ads-div
 {
-	@include media-lg {
+	@include media-xl {
 			display: flex;
 		     	position: absolute;
+		     	top: 7.5%;
 			right: 0;
 			width:20%;  
 			height:100%;  
@@ -288,12 +290,13 @@ $breakpoint-xl: 1200px;
 
 .right-bottom-ads-div
 {
-  @include media-lg {
+  @include media-xl {
   	display: none;
   	}
+  display: flex;
   position: absolute;
   left: 100;
-  bottom: 0;
+  /*bottom: 0;*/
   right: 0;
   width:50%;  
   height:25%;  
@@ -303,11 +306,12 @@ $breakpoint-xl: 1200px;
 
 .left-bottom-ads-div
 {
-  @include media-lg {
+  @include media-xl {
   	display: none;
   	}
+  display: flex;
   position: absolute;
-  bottom: 0;
+  /*bottom: 0;*/
   left: 0;
   width:50%;  
   height:25%;  
