@@ -2,6 +2,7 @@
 .idea/
 lab6/
 venv/
+env/
 app.egg-info/
 test.db
 .coverage
