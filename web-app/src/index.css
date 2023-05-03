@@ -23,27 +23,39 @@
   font-size: 1.5rem;
   padding: 0.5rem 0.8rem;
   position: absolute;
-  left: 25%;
-  top: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   margin: auto; }
+  @media (min-width: 350px) {
+    .rick-roll-button {
+      left: 5%;
+      top: 25%;
+      font-size: 2rem;
+      padding: 0.6rem 1rem; } }
   @media (min-width: 576px) {
     .rick-roll-button {
+      left: 25%;
+      top: 25%;
       font-size: 2rem;
       padding: 0.6rem 1rem; } }
   @media (min-width: 768px) {
     .rick-roll-button {
+      left: 25%;
+      top: 25%;
       font-size: 2.6rem;
       padding: 1rem 1.5rem; } }
   @media (min-width: 992px) {
     .rick-roll-button {
+      left: 25%;
+      top: 25%;
       font-size: 4rem;
       padding: 1.5rem 2rem; } }
   @media (min-width: 1920px) {
     .rick-roll-button {
+      left: 25%;
+      top: 25%;
       font-size: 5rem;
       padding: 2.5rem 3rem; } }
 
@@ -55,7 +67,8 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   max-width: 400px;
   width: 100%; }
@@ -140,35 +153,36 @@
       right: 65px; } }
 
 .left-top-btn {
-  top: 65px;
+  background-color: red;
+  top: 85px;
   left: 20px; }
   @media (min-width: 768px) {
     .left-top-btn {
-      top: 65px;
+      top: 85px;
       left: 30px; } }
   @media (min-width: 992px) {
     .left-top-btn {
-      top: 65px;
+      top: 85px;
       left: 45px; } }
   @media (min-width: 1920px) {
     .left-top-btn {
-      top: 65px;
+      top: 85px;
       left: 65px; } }
 
 .right-top-btn {
-  top: 65px;
+  top: 85px;
   right: 20px; }
   @media (min-width: 768px) {
     .right-top-btn {
-      top: 65px;
+      top: 85px;
       right: 30px; } }
   @media (min-width: 992px) {
     .right-top-btn {
-      top: 65px;
+      top: 85px;
       right: 45px; } }
   @media (min-width: 1920px) {
     .right-top-btn {
-      top: 65px;
+      top: 85px;
       right: 65px; } }
 
 .left-bottom-btn {
@@ -208,7 +222,7 @@
       position: absolute;
       top: 7.5%;
       left: 0;
-      width: 20%;
+      width: 15%;
       height: 100%;
       text-align: center; } }
 
@@ -220,18 +234,19 @@
       position: absolute;
       top: 7.5%;
       right: 0;
-      width: 20%;
+      width: 15%;
       height: 100%;
       text-align: center; } }
 
 .right-bottom-ads-div {
   display: flex;
-  position: absolute;
+  position: fixed;
   left: 100;
-  /*bottom: 0;*/
+  bottom: 0;
   right: 0;
   width: 50%;
   height: 25%;
+  z-index: 1;
   text-align: center; }
   @media (min-width: 1920px) {
     .right-bottom-ads-div {
@@ -239,11 +254,12 @@
 
 .left-bottom-ads-div {
   display: flex;
-  position: absolute;
-  /*bottom: 0;*/
+  position: fixed;
+  bottom: 0;
   left: 0;
   width: 50%;
   height: 25%;
+  z-index: 1;
   text-align: center; }
   @media (min-width: 1920px) {
     .left-bottom-ads-div {
@@ -262,7 +278,7 @@
 
 #confirm-add-btn {
   background-color: lightgreen;
-  position: absolute;
+  /* position: absolute; */
   right: 0; }
 
 /*.subject-table
