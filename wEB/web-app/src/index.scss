@@ -1,0 +1,350 @@
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1920px;
+
+@mixin media-sm {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+.navbar {
+  background-color: #000;
+
+  @include media-md {
+    background-color: #222;
+  }
+
+  @include media-lg {
+    background-color: #444;
+  }
+}
+
+.nav-link {
+  color: #fff;
+
+  @include media-sm {
+    font-size: 0.9rem;
+  }
+
+  @include media-md {
+    font-size: 1rem;
+  }
+
+  @include media-lg {
+    font-size: 1.2rem;
+  }
+}
+
+.rick-roll-button
+    	{
+    		@include media-sm {
+		    font-size: 2rem;
+		    padding: 0.6rem 1rem;
+		  }
+		@include media-md {
+		    font-size: 2.6rem;
+		    padding: 1rem 1.5rem;
+		  }
+		@include media-lg {
+		    font-size: 4rem;
+		    padding: 1.5rem 2rem;
+		  }
+		@include media-xl {
+		    font-size: 5rem;
+		    padding: 2.5rem 3rem;
+		  }    
+    		font-size: 1.5rem;
+	    	padding: 0.5rem 0.8rem;	
+    		position: absolute;
+	   	left: 25%;
+	   	top: 25%;
+    		display: flex;
+  		align-items: center;
+  		justify-content: center;
+    		text-align: center;
+    		margin: auto;
+    		
+    	}
+    	
+#change-form {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      width: 100%;
+    }
+    
+    #delete-form {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      width: 100%;
+    }
+    
+    #add-form {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      width: 100%;
+    }
+    
+    #put-mark-form {
+      border: 4px solid red;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      width: 100%;
+    }
+    
+   .link-btn-txt
+      {
+	color: white;
+      }  
+      
+   .corner-btn
+      {
+      		/*@include media-sm {
+		    font-size: 0.75rem;
+		    padding: 0.25rem 0.4rem;
+		  }*/
+		@include media-md {
+		    font-size: 1.2rem;
+		    padding: 0.4rem 0.6rem;
+		  }
+		@include media-lg {
+		    font-size: 1.5rem;
+		    padding: 0.6rem 0.75rem;
+		  }
+		@include media-xl {
+		    font-size: 2rem;
+		    padding: 1.25rem 1.75rem;
+		  } 
+      	/*font-size: 0.6px;
+	padding: 0.65px 1.2px;*/
+      }   
+      
+   .right-bottom-btn
+{
+		@include media-md {
+		    	bottom: 30px; 
+		    	right: 30px;
+		  }
+		@include media-lg {
+		    	bottom: 45px; 
+  			right: 45px;
+		  }
+		@include media-xl {
+		    	bottom: 65px; 
+  			right: 65px;
+		  }
+  bottom: 20px; 
+  right: 20px;
+}
+
+.left-top-btn
+{
+		@include media-md {
+		    	top: 65px; 
+		    	left: 30px;
+		  }
+		@include media-lg {
+		    	top: 65px; 
+  			left: 45px;
+		  }
+		@include media-xl {
+		    	top: 65px; 
+  			left: 65px;
+		  }
+  top: 65px; 
+  left: 20px;
+}
+
+.right-top-btn
+{
+  		@include media-md {
+		    	top: 65px; 
+		    	right: 30px;
+		  }
+		@include media-lg {
+		    	top: 65px; 
+  			right: 45px;
+		  }
+		@include media-xl {
+		    	top: 65px; 
+  			right: 65px;
+		  }
+  top: 65px; 
+  right: 20px;
+}   
+
+.left-bottom-btn
+{
+  		@include media-md {
+		    	bottom: 30px; 
+		    	left: 30px;
+		  }
+		@include media-lg {
+		    	bottom: 45px; 
+  			left: 45px;
+		  }
+		@include media-xl {
+		    	bottom: 65px; 
+  			left: 65px;
+		  }
+  bottom: 20px; 
+  left: 20px;
+}
+
+.ads
+{
+  width: 100%;  
+  height: 100%;  	
+}
+
+.bottom-ads-div
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width:100%;  
+  height:25%;  
+  text-align:center;   	
+}
+
+.left-ads-div
+{
+	@include media-xl {
+			display: flex;
+		     	position: absolute;
+		     	top: 7.5%;
+			left: 0;
+			width:20%;  
+			height:100%;  
+			text-align:center; 
+		  }
+  	display: none;  	
+}
+
+.right-ads-div
+{
+	@include media-xl {
+			display: flex;
+		     	position: absolute;
+		     	top: 7.5%;
+			right: 0;
+			width:20%;  
+			height:100%;  
+			text-align:center;
+			 
+		  }
+  	display: none;   	
+}
+
+.right-bottom-ads-div
+{
+  @include media-xl {
+  	display: none;
+  	}
+  display: flex;
+  position: absolute;
+  left: 100;
+  /*bottom: 0;*/
+  right: 0;
+  width:50%;  
+  height:25%;  
+  text-align: center;  
+    	
+}
+
+.left-bottom-ads-div
+{
+  @include media-xl {
+  	display: none;
+  	}
+  display: flex;
+  position: absolute;
+  /*bottom: 0;*/
+  left: 0;
+  width:50%;  
+  height:25%;  
+  text-align:center;   	
+}
+
+
+.block-label
+{
+	display: block;
+}
+
+#confirm-put-mark-btn
+{
+	background-color: lightgreen;
+	position: absolute;
+	right: 0;
+}
+
+#confirm-change-btn
+{
+	background-color: lightgreen;
+}
+
+#confirm-add-btn
+{
+	background-color: lightgreen;
+	position: absolute;
+	right: 0;
+}
+
+
+/*.subject-table
+{
+	border: 4px solid red;
+}*/
