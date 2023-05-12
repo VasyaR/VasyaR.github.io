@@ -49,7 +49,7 @@ const Marklist = () => {
         </ul>
       </div>
       {showAdsLeftBottom ? (
-        <div className="left-ads-div">
+        <div data-testid="LeftBottAdsTestId" className="left-ads-div">
           <img
             src="../../public/Data/advertisment_adidas3.png"
             alt="Advertisement"
@@ -58,7 +58,7 @@ const Marklist = () => {
         </div>
       ) : null}
       {showAdsRightBottom ? (
-        <div className="right-ads-div">
+        <div data-testid="RightBottAdsTestId" className="right-ads-div">
           <img
             src="../../public/Data/advertisment_adidas.png"
             alt="Advertisement"
@@ -90,6 +90,7 @@ const Marklist = () => {
       </div>
       {showAdsRightBottom ? (
         <button
+          data-testid="XRightBtnTestId"
           style={{
             width: `20px`,
             textAlign: "center",
@@ -111,6 +112,7 @@ const Marklist = () => {
       ) : null}
       {showAdsLeftBottom ? (
         <button
+          data-testid="XLeftBtnTestId"
           style={{
             width: `20px`,
             textAlign: "center",

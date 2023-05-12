@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router";
 import { Form } from "../components/Form/Form";
 import { Navigate } from "react-router-dom";
@@ -14,10 +14,32 @@ const NewUser = () => {
   const [firstname, SetFirstName] = useState("");
   const [lastname, SetLastName] = useState("");
   const [subjectIds, SetSubjectIds] = useState("");
+  const [subjects, setSubjects] = useState([]);
+  const [universities, setUniversities] = useState([]);
   const [role, SetRole] = useState("admin");
   const [universityId, SetUniversityId] = useState("");
 
   const navigate = useNavigate();
+
+  const GetUniversities = async () => {
+    const response = await $api.get("/university/");
+    setUniversities(response.data);
+    return;
+  };
+
+  useEffect(() => {
+    GetUniversities();
+  }, []);
+
+  const GetSubjetcs = async () => {
+    const response = await $api.get("/subject/");
+    setSubjects(response.data);
+    return;
+  };
+
+  useEffect(() => {
+    GetSubjetcs();
+  }, []);
 
   const AddUser = async () => {
     if (password !== confirmpassword) {
@@ -27,9 +49,42 @@ const NewUser = () => {
       return;
     }
 
-    const refsubjectIds = subjectIds
-      .split(",")
-      .map((item) => parseInt(item, 10));
+    let refUniversityId;
+    console.log();
+    for (let i = 0; i < 1; i++) {
+      let exists = false;
+      for (let j = 0; j < universities.length; j++) {
+        if (universityId === universities[j].name) {
+          refUniversityId = universities[j].id;
+          exists = true;
+          break;
+        }
+      }
+      if (exists === false) {
+        return alert("University wasn`t found");
+      }
+    }
+
+    let refsubjectIds = [];
+    const subjectnames = subjectIds.split(" ").map((item) => item);
+
+    for (let i = 0; i < subjectnames.length; i++) {
+      let exists = false;
+      for (let j = 0; j < subjects.length; j++) {
+        if (subjectnames[i] === subjects[j].name) {
+          refsubjectIds.push(subjects[i].id);
+          exists = true;
+          break;
+        }
+      }
+      if (exists === false) {
+        return alert("Some of subjects were not found");
+      }
+    }
+
+    // const refsubjectIds = subjectIds
+    //   .split(",")
+    //   .map((item) => parseInt(item, 10));
     try {
       const response = await $api.post(`${role}/`, {
         login: login,
@@ -38,7 +93,7 @@ const NewUser = () => {
           first_name: firstname,
           last_name: lastname,
           subject_ids: refsubjectIds,
-          university_id: universityId,
+          university_id: refUniversityId,
         },
       });
       navigate("/myaccount");
@@ -59,6 +114,7 @@ const NewUser = () => {
       >
         <label htmlFor="login">Login:</label>
         <TextField
+          inputProps={{ "data-testid": "NewUserLoginTestId" }}
           sx={{ border: 0 }}
           variant="outlined"
           color="secondary"
@@ -70,6 +126,7 @@ const NewUser = () => {
         />
         <label htmlFor="password">Password:</label>
         <TextField
+          inputProps={{ "data-testid": "NewUserPasswordTestId" }}
           sx={{ border: 0 }}
           variant="outlined"
           color="secondary"
@@ -81,6 +138,7 @@ const NewUser = () => {
         />
         <label htmlFor="confirm-password"> Confirm password:</label>
         <TextField
+          inputProps={{ "data-testid": "NewUserConfirmPasswordTestId" }}
           sx={{ border: 0 }}
           variant="outlined"
           color="secondary"
@@ -92,6 +150,7 @@ const NewUser = () => {
         />
         <label htmlFor="firstname">First name:</label>
         <TextField
+          inputProps={{ "data-testid": "NewUserFirstNameTestId" }}
           sx={{ border: 0 }}
           variant="outlined"
           color="secondary"
@@ -103,6 +162,7 @@ const NewUser = () => {
         />
         <label htmlFor="lastname">Last name:</label>
         <TextField
+          inputProps={{ "data-testid": "NewUserLastNameTestId" }}
           sx={{ border: 0 }}
           variant="outlined"
           color="secondary"
@@ -112,8 +172,9 @@ const NewUser = () => {
           onChange={(e) => SetLastName(e.target.value)}
           value={lastname}
         />
-        <label htmlFor="university-id"> University id:</label>
+        <label htmlFor="university-id"> University:</label>
         <TextField
+          inputProps={{ "data-testid": "NewUserUniversityTestId" }}
           sx={{ border: 0 }}
           variant="outlined"
           color="secondary"
@@ -123,8 +184,9 @@ const NewUser = () => {
           onChange={(e) => SetUniversityId(e.target.value)}
           value={universityId}
         />
-        <label htmlFor="subjects">Subject ids` separated by comas:</label>
+        <label htmlFor="subjects">Subjects that teacher teachs:</label>
         <TextField
+          inputProps={{ "data-testid": "NewUserSubjectsTestId" }}
           sx={{ border: 0 }}
           variant="outlined"
           color="secondary"
@@ -136,6 +198,7 @@ const NewUser = () => {
         />
         <label htmlFor="role">Role:</label>
         <Myselect
+          data-testid="NewUserSelectTestId"
           id="role"
           name="role"
           label="Role"
@@ -148,6 +211,7 @@ const NewUser = () => {
           ]}
         ></Myselect>
         <Button
+          data-testid="NewUserBtnTestId"
           sx={{ mt: "10px" }}
           variant="contained"
           color="secondary"

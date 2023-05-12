@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request, url_for
 from marshmallow import Schema, fields, ValidationError
 from app.db import db_session
+from datetime import timedelta
 from app.models import Admin
 from flask_bcrypt import Bcrypt
 from app import app
@@ -106,6 +107,6 @@ def login():
         return jsonify({'message': 'Incorrect password'}), 401
         
     admin_identity = {"id": db_admin.id, "role": "admin"}
-    access_token = create_access_token(identity=admin_identity)
+    access_token = create_access_token(identity=admin_identity, expires_delta=timedelta(days=1))
     return jsonify({'token': access_token, 'id': db_admin.id}), 200
 

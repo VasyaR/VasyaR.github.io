@@ -7,7 +7,7 @@ const Mainpage = () => {
 
   return (
     <div>
-      <button className="rick-roll-button">
+      <button data-testid="RickRollBtnTestId" className="rick-roll-button">
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
           Check best students!!!
         </a>
@@ -15,6 +15,7 @@ const Mainpage = () => {
       {showAdsRightBottom ? (
         <footer className="bottom-ads-div">
           <img
+            data-testid="MainPageAdsTestId"
             src="../../public/Data/advertisment_adidas3.png"
             alt="Advertisement"
             className="ads"
@@ -23,6 +24,7 @@ const Mainpage = () => {
       ) : null}
       {showAdsRightBottom ? (
         <button
+          data-testid="xMainPageBtnTestId"
           style={{
             width: `20px`,
             textAlign: "center",
