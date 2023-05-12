@@ -378,7 +378,7 @@ const Universities = () => {
       ) : null}
       <div>
         {showAdsLeftBottom ? (
-          <div className="left-bottom-ads-div">
+          <div data-testid="LeftBottAdsTestId" className="left-bottom-ads-div">
             <img
               src="../../public/Data/advertisment_adidas3.png"
               alt="Advertisement"
@@ -389,7 +389,10 @@ const Universities = () => {
       </div>
       <div>
         {showAdsRightBottom ? (
-          <div className="right-bottom-ads-div">
+          <div
+            data-testid="RightBottAdsTestId"
+            className="right-bottom-ads-div"
+          >
             <img
               src="../../public/Data/advertisment_adidas.png"
               alt="Advertisement"
@@ -400,6 +403,7 @@ const Universities = () => {
       </div>
       {showAdsRightBottom ? (
         <button
+          data-testid="XRightBtnTestId"
           style={{
             width: `20px`,
             textAlign: "center",
@@ -421,6 +425,7 @@ const Universities = () => {
       ) : null}
       {showAdsLeftBottom ? (
         <button
+          data-testid="XLeftBtnTestId"
           style={{
             width: `20px`,
             textAlign: "center",

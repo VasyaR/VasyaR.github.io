@@ -199,7 +199,10 @@ const Myaccount = () => {
       ) : null}
 
       <div style={{ textAlign: "center", paddingTop: "100px" }}>
-        <h1> Your username: {LocalStorage.get("username")}</h1>
+        <h1 data-testid="YourUsernameTestId">
+          {" "}
+          Your username: {LocalStorage.get("username")}
+        </h1>
         <h1> role: {LocalStorage.get("role")}</h1>
       </div>
 

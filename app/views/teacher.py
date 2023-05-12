@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request
 from marshmallow import Schema, fields, ValidationError
 from app.db import db_session
+from datetime import timedelta
 from app.models import Teacher, TeachersSubjects, Subject, University
 from flask_bcrypt import Bcrypt
 from app import app
@@ -176,7 +177,7 @@ def login():
             return jsonify({'message': 'Incorrect password'}), 400
         
     teacher_identity = {"id": db_teacher.id, "role": "teacher"}
-    access_token = create_access_token(identity=teacher_identity)
+    access_token = create_access_token(identity=teacher_identity, expires_delta=timedelta(days=1))
     return jsonify({'token': access_token, 'id': db_teacher.id}), 200
         
 @mod.route('/logout', methods=['GET'])

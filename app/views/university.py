@@ -99,7 +99,7 @@ def get_university_rating(university_id):
                 filter(Student.university_id == university_id).\
                     filter(Mark.year == int(request.args['year'])).\
                         filter(Mark.semester == int(request.args['semester'])).all()
-        res = []
+        res = [] 
         for row in rows:
             res.append({
                 'points': "%.3f" % row[0],
@@ -108,7 +108,7 @@ def get_university_rating(university_id):
                     'last_name': row[1].last_name,
                     'university_id': row[1].university_id
                 },
-                'student_id': row[1].id
+                'student_id': row[1].id,
             })
         return jsonify({"rating": res}), 200
     return jsonify({'message': 'The university was not found'}), 404

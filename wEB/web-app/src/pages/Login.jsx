@@ -41,9 +41,14 @@ const Login = () => {
       LocalStorage.add("isAuth", true);
       LocalStorage.add("username", login);
       LocalStorage.add("id", response.data.id);
+      console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!LOL");
       navigate("/myaccount");
     } catch (error) {
-      alert(error.response.data.message);
+      console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!LOLOMG");
+      console.log(login);
+      console.log(password);
+      console.log(error);
+      return alert(error.response.data.message);
     }
   };
 
@@ -59,6 +64,7 @@ const Login = () => {
         <label htmlFor="login">Login:</label>
         <TextField
           sx={{ border: 0 }}
+          inputProps={{ "data-testid": "LoginLoginTestId" }}
           variant="outlined"
           color="secondary"
           type="text"
@@ -70,6 +76,7 @@ const Login = () => {
         <label htmlFor="password">Password:</label>
         <TextField
           sx={{ border: 0 }}
+          inputProps={{ "data-testid": "LoginPasswordTestId" }}
           variant="outlined"
           color="secondary"
           type="password"
@@ -81,6 +88,7 @@ const Login = () => {
         <label htmlFor="confirm-password"> Confirm password:</label>
         <TextField
           sx={{ border: 0 }}
+          inputProps={{ "data-testid": "LoginConfirmPasswordTestId" }}
           variant="outlined"
           color="secondary"
           type="password"
@@ -103,6 +111,7 @@ const Login = () => {
           ]}
         ></Myselect>
         <Button
+          data-testid="LoginBtnTestId"
           sx={{ mt: "10px" }}
           variant="contained"
           color="secondary"
