@@ -1,10 +1,11 @@
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship, backref
 from sqlalchemy import * 
+from enum import Enum
 
 Base = declarative_base()
 engine = create_engine(url='postgresql+pg8000://postgres:123@localhost:5432/postgres')
 Session = sessionmaker(bind=engine)
-
+    
 class Student(Base):
     __tablename__ = "students"
     id = Column(Integer, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1), primary_key=True, nullable=False)
@@ -63,3 +64,16 @@ class Admin(Base):
     id = Column(Integer, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1), primary_key=True, nullable=False)
     login = Column(String(25), nullable=False, unique=True)
     password = Column(String(256), nullable=False)
+    
+class Message(Base):
+    __tablename__ = "messages"
+    id = Column(Integer, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1), primary_key=True, nullable=False)
+    text = Column(String(256), nullable=False)
+    user_login = Column(String(25), nullable=False)
+    role = Column(String(25), nullable=False)
+    
+    
+    
+    
+    
+    

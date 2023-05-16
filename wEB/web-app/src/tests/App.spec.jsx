@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import App from "../App";
 
-describe("Universities", () => {
+describe("App", () => {
   beforeEach(() => {
     render(
       <BrowserRouter>
