@@ -10,11 +10,9 @@ import Universities from "./pages/Universities";
 import Univeristyrating from "./pages/Universityrating";
 import NewUser from "./pages/NewUser";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Chat from "./pages/Chat";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div>
       <Header />
@@ -28,8 +26,8 @@ function App() {
         <Route path="/universities" element={<Universities />} />
         <Route path="/universityrating" element={<Univeristyrating />} />
         <Route path="/newuser" element={<NewUser />} />
+        <Route path="/chat" element={<Chat />} />
       </Routes>
-      {/* {window.innerWidth < 1000 ? <Footer/> : null}        */}
     </div>
   );
 }

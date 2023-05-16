@@ -151,26 +151,41 @@ export default function Header() {
                 </MenuItem>
               ))}
             {state.isAuth ? (
-              <MenuItem>
-                <Typography className="nav-item">
-                  <Link
-                    className="nav-link"
-                    to="/mainpage"
-                    onClick={Logout}
-                    style={{ color: "black" }}
-                  >
-                    Log out
-                  </Link>
-                </Typography>
-              </MenuItem>
+              <>
+                <MenuItem>
+                  <Typography className="nav-item">
+                    <Link
+                      className="nav-link"
+                      to="/chat"
+                      style={{ color: "black" }}
+                    >
+                      Chat
+                    </Link>
+                  </Typography>
+                </MenuItem>
+                <MenuItem>
+                  <Typography className="nav-item">
+                    <Link
+                      className="nav-link"
+                      to="/mainpage"
+                      onClick={Logout}
+                      style={{ color: "black" }}
+                    >
+                      Log out
+                    </Link>
+                  </Typography>
+                </MenuItem>
+              </>
             ) : (
-              <MenuItem onClick={handleClose}>
-                <Typography className="nav-item" color="black">
-                  <Link to="/login" style={{ color: "black" }}>
-                    Log in
-                  </Link>
-                </Typography>
-              </MenuItem>
+              <>
+                <MenuItem onClick={handleClose}>
+                  <Typography className="nav-item" color="black">
+                    <Link to="/login" style={{ color: "black" }}>
+                      Log in
+                    </Link>
+                  </Typography>
+                </MenuItem>
+              </>
             )}
           </Menu>
         </React.Fragment>
