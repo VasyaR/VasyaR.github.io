@@ -55,7 +55,23 @@ const Subjects = () => {
   };
 
   const AddSubject = async () => {
-    const refteacherIds = newIds.split(",").map((item) => parseInt(item, 10));
+    // const refteacherIds = newIds.split(",").map((item) => parseInt(item, 10));
+    let refteacherIds = [];
+    const teacherLogins = newIds.split(" ").map((item) => item);
+
+    for (let i = 0; i < teacherLogins.length; i++) {
+      let exists = false;
+      for (let j = 0; j < teacehrs.length; j++) {
+        if (teacherLogins[i] === teacehrs[j].login) {
+          refteacherIds.push(teacehrs[j].id);
+          exists = true;
+          break;
+        }
+      }
+      if (exists === false) {
+        return alert("Some of teachers were not found");
+      }
+    }
 
     try {
       const response = await $api.post(`/subject/`, {
@@ -90,7 +106,7 @@ const Subjects = () => {
       let exists = false;
       for (let j = 0; j < teacehrs.length; j++) {
         if (teacherLogins[i] === teacehrs[j].login) {
-          refteacherIds.push(teacehrs[i].id);
+          refteacherIds.push(teacehrs[j].id);
           exists = true;
           break;
         }
@@ -281,9 +297,7 @@ const Subjects = () => {
               }}
               value={newName}
             />
-            <label htmlFor="add-ids">
-              Enter teachers` ids separated by comas:
-            </label>
+            <label htmlFor="add-ids">Enter teachers` logins:</label>
             <TextField
               type="text"
               id="add-ids"
@@ -314,7 +328,10 @@ const Subjects = () => {
               className="btn btn-success"
               type="button"
               id="add-btn"
-              onClick={openAddPassModal}
+              onClick={() => {
+                Getteachers();
+                openAddPassModal();
+              }}
             >
               Add subject
             </Button>

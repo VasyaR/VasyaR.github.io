@@ -51,34 +51,39 @@ const NewUser = () => {
 
     let refUniversityId;
     console.log();
-    for (let i = 0; i < 1; i++) {
-      let exists = false;
-      for (let j = 0; j < universities.length; j++) {
-        if (universityId === universities[j].name) {
-          refUniversityId = universities[j].id;
-          exists = true;
-          break;
+    if (role === "admin" && universityId === "") {
+    } else {
+      for (let i = 0; i < 1; i++) {
+        let exists = false;
+        for (let j = 0; j < universities.length; j++) {
+          if (universityId === universities[j].name) {
+            refUniversityId = universities[j].id;
+            exists = true;
+            break;
+          }
+        }
+        if (exists === false) {
+          return alert("University wasn`t found");
         }
       }
-      if (exists === false) {
-        return alert("University wasn`t found");
-      }
     }
-
     let refsubjectIds = [];
     const subjectnames = subjectIds.split(" ").map((item) => item);
 
-    for (let i = 0; i < subjectnames.length; i++) {
-      let exists = false;
-      for (let j = 0; j < subjects.length; j++) {
-        if (subjectnames[i] === subjects[j].name) {
-          refsubjectIds.push(subjects[i].id);
-          exists = true;
-          break;
+    if (subjectIds === "") {
+    } else {
+      for (let i = 0; i < subjectnames.length; i++) {
+        let exists = false;
+        for (let j = 0; j < subjects.length; j++) {
+          if (subjectnames[i] === subjects[j].name) {
+            refsubjectIds.push(subjects[j].id);
+            exists = true;
+            break;
+          }
         }
-      }
-      if (exists === false) {
-        return alert("Some of subjects were not found");
+        if (exists === false) {
+          return alert("Some of subjects were not found");
+        }
       }
     }
 
