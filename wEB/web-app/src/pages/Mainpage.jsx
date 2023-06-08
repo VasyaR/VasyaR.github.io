@@ -9,7 +9,7 @@ const Mainpage = () => {
     <div>
       <button data-testid="RickRollBtnTestId" className="rick-roll-button">
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-          Check best students!!!
+          Motivate yourself!!!
         </a>
       </button>
       {showAdsRightBottom ? (

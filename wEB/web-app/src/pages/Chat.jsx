@@ -38,17 +38,20 @@ const Chat = () => {
   };
 
   const handleDelete = async () => {
+    if (!currentMessageId) {
+      return alert(`Reload page and try again`);
+    }
     await axios.delete(`http://localhost:3000/messages/${currentMessageId}`);
 
     socket.emit("delete-message", JSON.stringify({ id: currentMessageId }));
 
-    // handleClose();
+    handleClose();
   };
   const handleEdit = async () => {
     const id = currentMessageId;
     const text = editInput;
     if (!id || !text) {
-      return alert(`You haven't choose a message`);
+      return alert(`You haven't choosen a message`);
     }
     await axios.patch(`http://localhost:3000/messages/${id}`, {
       text,
@@ -66,7 +69,7 @@ const Chat = () => {
   };
   useEffect(() => {
     socket.on("connect", () => {
-      console.log("connected to server LOL");
+      console.log("connected to server");
     });
     getMessages();
     socket.on("messages", (data) => {

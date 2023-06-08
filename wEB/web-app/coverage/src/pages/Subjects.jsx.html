@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.34% </span>
+                <span class="strong">63.27% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>276/416</span>
+                <span class='fraction'>274/433</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">18.75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/15</span>
+                <span class='fraction'>3/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.34% </span>
+                <span class="strong">63.27% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>276/416</span>
+                <span class='fraction'>274/433</span>
             </div>
         
             
@@ -479,7 +479,24 @@
 <a name='L414'></a><a href='#L414'>414</a>
 <a name='L415'></a><a href='#L415'>415</a>
 <a name='L416'></a><a href='#L416'>416</a>
-<a name='L417'></a><a href='#L417'>417</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L417'></a><a href='#L417'>417</a>
+<a name='L418'></a><a href='#L418'>418</a>
+<a name='L419'></a><a href='#L419'>419</a>
+<a name='L420'></a><a href='#L420'>420</a>
+<a name='L421'></a><a href='#L421'>421</a>
+<a name='L422'></a><a href='#L422'>422</a>
+<a name='L423'></a><a href='#L423'>423</a>
+<a name='L424'></a><a href='#L424'>424</a>
+<a name='L425'></a><a href='#L425'>425</a>
+<a name='L426'></a><a href='#L426'>426</a>
+<a name='L427'></a><a href='#L427'>427</a>
+<a name='L428'></a><a href='#L428'>428</a>
+<a name='L429'></a><a href='#L429'>429</a>
+<a name='L430'></a><a href='#L430'>430</a>
+<a name='L431'></a><a href='#L431'>431</a>
+<a name='L432'></a><a href='#L432'>432</a>
+<a name='L433'></a><a href='#L433'>433</a>
+<a name='L434'></a><a href='#L434'>434</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -550,6 +567,22 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -760,8 +793,6 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -787,6 +818,9 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -952,7 +986,23 @@ const Subjects = () =&gt; {
 <span class="cstat-no" title="statement not covered" >  };</span>
 &nbsp;
   const AddSubject = <span class="fstat-no" title="function not covered" >async () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const refteacherIds = newIds.split(",").map((item) =&gt; parseInt(item, 10));</span>
+<span class="cstat-no" title="statement not covered" >    // const refteacherIds = newIds.split(",").map((item) =&gt; parseInt(item, 10));</span>
+<span class="cstat-no" title="statement not covered" >    let refteacherIds = [];</span>
+<span class="cstat-no" title="statement not covered" >    const teacherLogins = newIds.split(" ").map((item) =&gt; item);</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    for (let i = 0; i &lt; teacherLogins.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >      let exists = false;</span>
+<span class="cstat-no" title="statement not covered" >      for (let j = 0; j &lt; teacehrs.length; j++) {</span>
+<span class="cstat-no" title="statement not covered" >        if (teacherLogins[i] === teacehrs[j].login) {</span>
+<span class="cstat-no" title="statement not covered" >          refteacherIds.push(teacehrs[j].id);</span>
+<span class="cstat-no" title="statement not covered" >          exists = true;</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      if (exists === false) {</span>
+<span class="cstat-no" title="statement not covered" >        return alert("Some of teachers were not found");</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    try {</span>
 <span class="cstat-no" title="statement not covered" >      const response = await $api.post(`/subject/`, {</span>
@@ -987,7 +1037,7 @@ const Subjects = () =&gt; {
 <span class="cstat-no" title="statement not covered" >      let exists = false;</span>
 <span class="cstat-no" title="statement not covered" >      for (let j = 0; j &lt; teacehrs.length; j++) {</span>
 <span class="cstat-no" title="statement not covered" >        if (teacherLogins[i] === teacehrs[j].login) {</span>
-<span class="cstat-no" title="statement not covered" >          refteacherIds.push(teacehrs[i].id);</span>
+<span class="cstat-no" title="statement not covered" >          refteacherIds.push(teacehrs[j].id);</span>
 <span class="cstat-no" title="statement not covered" >          exists = true;</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -1178,9 +1228,7 @@ const Subjects = () =&gt; {
 <span class="cstat-no" title="statement not covered" >              }}</span>
               value={newName}
             /&gt;
-            &lt;label htmlFor="add-ids"&gt;
-              Enter teachers` ids separated by comas:
-            &lt;/label&gt;
+            &lt;label htmlFor="add-ids"&gt;Enter teachers` logins:&lt;/label&gt;
             &lt;TextField
               type="text"
               id="add-ids"
@@ -1211,7 +1259,10 @@ const Subjects = () =&gt; {
 <span class="cstat-no" title="statement not covered" >              className="btn btn-success"</span>
 <span class="cstat-no" title="statement not covered" >              type="button"</span>
 <span class="cstat-no" title="statement not covered" >              id="add-btn"</span>
-<span class="cstat-no" title="statement not covered" >              onClick={openAddPassModal}</span>
+<span class="cstat-no" title="statement not covered" >              onClick={<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >                Getteachers();</span>
+<span class="cstat-no" title="statement not covered" >                openAddPassModal();</span>
+<span class="cstat-no" title="statement not covered" >              }}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
 <span class="cstat-no" title="statement not covered" >              Add subject</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/Button&gt;</span>
@@ -1318,7 +1369,7 @@ export default Subjects;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-10T07:27:05.235Z
+                at 2023-06-08T12:50:38.775Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
